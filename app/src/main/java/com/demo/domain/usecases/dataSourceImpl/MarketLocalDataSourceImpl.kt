@@ -9,6 +9,10 @@ class MarketLocalDataSourceImpl(private val marketDao: MarketDao): MarketLocalDa
         marketDao.insertMarketData(marketList)
     }
 
+    override suspend fun deleteMarketListFromDB() {
+        marketDao.deleteAllMarketData()
+    }
+
     override suspend fun getMarketList(): List<MarketModel> {
         return marketDao.fetchMarketData()
     }

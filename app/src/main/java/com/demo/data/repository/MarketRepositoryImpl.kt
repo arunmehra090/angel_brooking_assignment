@@ -17,7 +17,7 @@ class MarketRepositoryImpl(
                 if (isSuccessful && code() == 200 && body() is MarketApiResponseModel) {
                     (body() as MarketApiResponseModel).apply {
                         if (markets.isNotEmpty()) {
-                            saveDataIntoDb(markets)
+                            deleteAndSaveDataIntoDb(markets)
                             return true
                         }
                     }
@@ -29,7 +29,8 @@ class MarketRepositoryImpl(
         return false
     }
 
-    private suspend fun saveDataIntoDb(marketList: List<Market>) {
+    private suspend fun deleteAndSaveDataIntoDb(marketList: List<Market>) {
+        marketLocalDataSource.deleteMarketListFromDB()
         marketLocalDataSource.saveMarketListToDB(ArrayList<MarketModel>().apply {
             marketList.forEach {
                 add(
