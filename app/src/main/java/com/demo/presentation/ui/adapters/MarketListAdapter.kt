@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.demo.data.db.entities.MarketModel
 import com.demo.databinding.AdapterMarketListBinding
+import com.demo.presentation.extension.setDataUpToTwoDigits
 import com.demo.presentation.extension.setTextWithVisibility
 
 class MarketListAdapter : ListAdapter<MarketModel,
@@ -55,8 +56,8 @@ class MarketListAdapter : ListAdapter<MarketModel,
                 item.apply {
                     tvExchangeId.setTextWithVisibility(exchangeId)
                     tvSymbol.setTextWithVisibility(symbol)
-                    tvPrice.text = price.toString()
-                    tvVolume.text = volume24h.toString()
+                    tvPrice.setDataUpToTwoDigits(price)
+                    tvVolume.setDataUpToTwoDigits(volume24h)
                 }
 
                 root.setOnClickListener {

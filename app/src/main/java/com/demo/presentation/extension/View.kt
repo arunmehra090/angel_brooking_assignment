@@ -7,6 +7,7 @@ import android.text.style.StyleSpan
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import java.lang.StringBuilder
 
 fun View.setViewVisibility(isVisible: Boolean) {
     this.visibility = if (isVisible) View.VISIBLE else View.GONE
@@ -44,6 +45,28 @@ fun TextView.setModelData(tittle: String, value: String?) {
             Spannable.SPAN_EXCLUSIVE_INCLUSIVE
         )
     }
+}
+
+fun TextView.setDataUpToTwoDigits(num: Double) {
+    num.toString().apply {
+        if (contains(".")) {
+            val sb = StringBuilder(substringBefore("."))
+            val charArray = split(".")
+            if (charArray.size == 2) {
+                sb.append(".")
+                when {
+                    charArray[1].length > 2 -> {
+                        sb.append(charArray[1].substring(0, 2))
+                    }
+                    else -> {
+                        sb.append(charArray[1])
+                    }
+                }
+            }
+            text = sb
+        }
+    }
+
 }
 
 
