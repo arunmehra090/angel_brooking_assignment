@@ -66,16 +66,6 @@ class MarketListAdapter : ListAdapter<MarketModel,
         }
     }
 
-//    private var onClickOnItem: OnClickItem? = null
-//
-//    interface OnClickItem {
-//        fun onClickItemListener(model: MarketModel)
-//    }
-//
-//    fun setOnItemClickListener(listener: OnClickItem) {
-//        onClickOnItem = listener
-//    }
-//
     private var onClickOnItem: ((MarketModel) -> Unit)? = null
 
     fun setOnItemClickListener(listener: (MarketModel) -> Unit) {
