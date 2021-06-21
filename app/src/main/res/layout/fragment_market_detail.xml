@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.fragments.MarketDetailFragment">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_alignParentTop="true"
+            android:id="@+id/mdAppbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                app:title="Market Detail Page"
+                android:id="@+id/mdToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/Theme.MyApplication.PopupOverlay" >
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:layout_below="@+id/mdAppbarLayout"
+            style="@style/textViewStyle_detail_page"
+            android:id="@+id/tvExchange"
+            tools:text="BINANCE" />
+
+        <TextView
+            android:layout_below="@id/tvExchange"
+            style="@style/textViewStyle_detail_page"
+            android:id="@+id/tvSymbols"
+            tools:text="BNB-USDT" />
+
+        <TextView
+            android:layout_below="@id/tvSymbols"
+            style="@style/textViewStyle_detail_page"
+            android:id="@+id/tvPriceUncovered"
+            tools:text="325.205" />
+
+        <TextView
+            android:layout_below="@id/tvPriceUncovered"
+            style="@style/textViewStyle_detail_page"
+            android:id="@+id/tvPrices"
+            tools:text="325.522755692552" />
+
+        <TextView
+            android:layout_below="@id/tvPrices"
+            style="@style/textViewStyle_detail_page"
+            android:id="@+id/tvChange"
+            tools:text="-4.564796337598312" />
+
+        <TextView
+            android:layout_below="@id/tvChange"
+            style="@style/textViewStyle_detail_page"
+            android:id="@+id/tvSpread"
+            tools:text="0.0030749361950711557" />
+
+        <TextView
+            android:layout_below="@id/tvSpread"
+            style="@style/textViewStyle_detail_page"
+            android:id="@+id/tvVolume24h"
+            tools:text="465477320.9896931" />
+
+        <TextView
+            android:layout_below="@id/tvVolume24h"
+            style="@style/textViewStyle_detail_page"
+            android:id="@+id/tvStatus"
+            tools:text="recent" />
+
+        <TextView
+            android:layout_below="@id/tvStatus"
+            style="@style/textViewStyle_detail_page"
+            android:id="@+id/tvTimeStamp"
+            tools:text="2021-06-20T15:33:35" />
+    </RelativeLayout>
+</layout>

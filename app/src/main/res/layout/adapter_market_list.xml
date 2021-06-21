@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/card_bg"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:layout_margin="4dp"
+        android:padding="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/textViewStyle"
+            android:id="@+id/tvExchangeId"
+            tools:text="BINANCE"/>
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/tvExchangeId"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/textViewStyle"
+            android:id="@+id/tvSymbol"
+            tools:text="BTC-USDT"/>
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/tvSymbol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/textViewStyle"
+            android:id="@+id/tvPrice"
+            tools:text="33943.21"/>
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/tvPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/textViewStyle"
+            android:id="@+id/tvVolume"
+            tools:text="2413993459.80"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
